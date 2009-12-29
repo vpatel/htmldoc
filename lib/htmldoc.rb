@@ -183,7 +183,7 @@ module PDF
       else
         @result[:output] = result
         result.split(/\r|\n/).each do |line|
-          case line
+          case line.strip
             when /^BYTES: (\d+)/
               @result[:bytes] = $1.to_i
             when /^PAGES: (\d+)/
